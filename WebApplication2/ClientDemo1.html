@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/set2.css">
+	
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	
+	<script src="js/jquery-3.1.0.min.js"></script>
+	
+</head>
+
+<body>
+<div id="main-wrapper">
+
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-md-6 left-side top-to-bottom">
+        	<header>
+          		<!--<span>Need an account?</span>-->
+          		<h3>Need Anything ?</h3>
+        	</header>
+        	<br><br><br><br>
+        	<ul class="social1">
+				<li onClick="hk()">House Keeping </li>
+				<br>
+				<li onClick="res()">Restaurant </li>
+				<br>
+				<li onClick="rs()">Room Service </li>
+				<br>
+				<li onClick="bar()">Bar </li>
+				<br>
+				<li onClick="rec()">Reception </li>
+			</ul>
+     	
+     	<ul class="social list-inline">
+			<li><a href="#">LOG OUT</a></li><font color="#3A7EF5" size="+1"> -</font><li><a href="#">CHECK OUT</a></li>
+        </ul>
+      	</div>
+      	
+      	<div class="verticalLine">
+		</div>
+      	
+      	<div class="col-md-6 right-side" style="overflow: scroll;">
+      	
+      	<center>
+      	<!--<div class="right-block">-->
+      	
+				<div id="hk">
+					<h1>House Keeping</h1>
+					<hr>
+					<br>
+				</div>	
+
+
+				<div id="res">
+					<h1>Restaurant </h1>
+					<hr>
+					<br>
+				</div>
+
+
+				<div id="rs">
+					<h1>Room Service</h1>
+					<hr>
+					<br>
+					
+					<input type="checkbox" name="Room Cleaning" value="Room Cleaning"> Room Cleaning<br><br>
+					<input type="checkbox" name="Changing Linens" value="Changing Linens"> Changing Linens<br><br>
+					<input type="checkbox" name="Trash Removal" value="Trash Removal"> Trash Removal<br><br>
+					<input type="checkbox" name="Cleaning Sinks" value="Cleaning Sinks"> Cleaning Sinks<br><br>
+					<input type="checkbox" name="Mopping" value="Mopping"> Mopping<br><br>
+					<input type="checkbox" name="Vaccum Carpets" value="Vaccum Carpets"> Vaccum Carpets<br><br>
+					<br>
+ 					<div class="cta">
+					  <button class="btn btn-primary">
+						SUBMIT
+					  </button>
+          
+        			</div>
+				</div>
+
+
+				<div id="bar">
+					<h1>Bar</h1>
+					<hr>
+					<br>
+				</div>
+
+
+				<div id="rec">
+					<h1>Reception</h1>
+					<hr>
+					<br>
+					<!--<font size="+2" style="text-underline-position: below;" face="Calibri Light">Leave Your Message Below</font>-->
+					
+					<textarea class="textarea" placeholder=" Leave Your Message Here"></textarea>
+					
+					<div class="cta">
+					<br><br><br>
+					    <button class="btn btn-primary">
+						SUBMIT
+					  </button>
+          
+        			</div>
+				</div>
+		
+		
+		</center>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<!-- Scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/classie.js"></script>
+<script>
+
+	function hk()
+	{
+		$("#hk").css("display","block");
+		$("#res").css("display","none");
+		$("#rs").css("display","none");
+		$("#bar").css("display","none");
+		$("#rec").css("display","none");
+	}
+	
+	function res()
+	{
+		$("#hk").css("display","none");
+		$("#res").css("display","block");
+		$("#rs").css("display","none");
+		$("#bar").css("display","none");
+		$("#rec").css("display","none");
+	}
+	
+	function rs()
+	{
+		$("#hk").css("display","none");
+		$("#res").css("display","none");
+		$("#rs").css("display","block");
+		$("#bar").css("display","none");
+		$("#rec").css("display","none");
+	}
+	
+	function bar()
+	{
+		$("#hk").css("display","none");
+		$("#res").css("display","none");
+		$("#rs").css("display","none");
+		$("#bar").css("display","block");
+		$("#rec").css("display","none");
+	}
+	
+	function rec()
+	{
+		$("#hk").css("display","none");
+		$("#res").css("display","none");
+		$("#rs").css("display","none");
+		$("#bar").css("display","none");
+		$("#rec").css("display","block");
+	}
+	
+  (function() {
+    // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+    if (!String.prototype.trim) {
+      (function() {
+        // Make sure we trim BOM and NBSP
+        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+        String.prototype.trim = function() {
+          return this.replace(rtrim, '');
+        };
+      })();
+    }
+
+    [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+      // in case the input is already filled..
+      if( inputEl.value.trim() !== '' ) {
+        classie.add( inputEl.parentNode, 'input--filled' );
+      }
+
+      // events:
+      inputEl.addEventListener( 'focus', onInputFocus );
+      inputEl.addEventListener( 'blur', onInputBlur );
+    } );
+
+    function onInputFocus( ev ) {
+      classie.add( ev.target.parentNode, 'input--filled' );
+    }
+
+    function onInputBlur( ev ) {
+      if( ev.target.value.trim() === '' ) {
+        classie.remove( ev.target.parentNode, 'input--filled' );
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>
