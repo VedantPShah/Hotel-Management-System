@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/set2.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	
+	<script src="js/jquery-3.1.0.min.js"></script>
+	
+</head>
+
+<body>
+<div id="main-wrapper" style="margin-bottom: 30%;">
+
+<div class="container-fluid">
+	<center>
+	<div class="titleadmin">
+		<h3 class="admin">House Keeping</h3>
+		<hr>
+	</div>
+	<br><br>
+	<div class="mainblock">
+		
+		<!--<div class="block">
+			
+		</div>-->
+		
+	</div>
+	</center>
+	
+</div>
+
+</div>
+<footer class="w3-center w3-padding-48 w3-large">
+	Log Out?
+</footer>
+
+<!-- Scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/classie.js"></script>
+<script>
+	  (function() {
+    // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+    if (!String.prototype.trim) {
+      (function() {
+        // Make sure we trim BOM and NBSP
+        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+        String.prototype.trim = function() {
+          return this.replace(rtrim, '');
+        };
+      })();
+    }
+
+    [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+      // in case the input is already filled..
+      if( inputEl.value.trim() !== '' ) {
+        classie.add( inputEl.parentNode, 'input--filled' );
+      }
+
+      // events:
+      inputEl.addEventListener( 'focus', onInputFocus );
+      inputEl.addEventListener( 'blur', onInputBlur );
+    } );
+
+    function onInputFocus( ev ) {
+      classie.add( ev.target.parentNode, 'input--filled' );
+    }
+
+    function onInputBlur( ev ) {
+      if( ev.target.value.trim() === '' ) {
+        classie.remove( ev.target.parentNode, 'input--filled' );
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>
